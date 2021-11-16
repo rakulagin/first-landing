@@ -173,8 +173,10 @@ body {
 }
 
 .item_text_2 {
+    right: auto;
     top: 32px;
     left: 32px;
+    text-align: left;
     position: absolute;
     font-size: 28px;
     line-height: 46px;
@@ -239,6 +241,12 @@ body {
     margin-bottom: 64px;
     color: #FFFFFF;
     opacity: 1;
+}
+
+.footer_list {
+    flex-grow: 1;
+    flex-basis: 33.3333%;
+    margin-right: 32px;
 }
 
 .copy_text {
