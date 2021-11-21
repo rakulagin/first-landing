@@ -6,7 +6,7 @@
 }
 
 .container {
-    width: 1140px;
+    max-width: 1140px;
     margin: 0 auto;
 }
 
@@ -50,7 +50,7 @@ body {
 /* стили блока top */
 
 .top {
-    height: 768px;
+    min-height: 768px;
     background: linear-gradient(0deg, #EBF3FB 8.84%, rgba(152, 195, 232, 0) 31.12%);
 }
 
@@ -73,6 +73,7 @@ body {
     background-image: url(images/top_back.png);
     background-repeat: no-repeat;
     background-position: right center;
+    background-size: 44%;
 }
 
 .text-1 {
@@ -166,10 +167,11 @@ body {
     line-height: 46px;
     text-align: right;
     letter-spacing: 0.05em;
-    color: #FFFFFF;
     position: absolute;
     top: 64px;
     right: 64px;
+    color: #FFFFFF;
+    font-weight: 300;
 }
 
 .item_text_2 {
@@ -200,6 +202,8 @@ body {
 
 .footer_text {
     width: 495px;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer_heading {
@@ -284,4 +288,172 @@ line-height: 26px;
 text-align: center;
 color: #FFFFFF;
 text-transform: uppercase;
+}
+
+/* медиа запросы */
+
+@media (max-width: 1024px) {
+    .container {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    .top_info {
+        background-position: right 280px;
+    }
+
+    .catalog {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        margin-bottom: 32px;
+    }
+
+    .footer {
+        padding-top: 47px;
+    }
+
+    .footer_top {
+        justify-content: space-between;
+        width: 520px;
+        margin: 0 auto 64px;
+    }
+
+    .footer_text {
+        max-width: 336px;
+    }
+
+    .footer_button {
+        padding: 3px 10px;
+    }
+
+    .footer_bottom {
+        /* padding-left: 124px; */
+        width: 520px;
+        margin: 64px auto 0;
+    }
+
+    .footer_info {
+        flex-direction: column;
+    }
+
+    .footer_list {
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 667px) {
+    .header {
+        padding-top: 24px;
+    }
+
+    .top {
+        min-height: 376px;
+        padding-bottom: 41px;
+        box-sizing: border-box;
+    }
+
+    .top_info {
+        padding-top: 36px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: none;
+    }
+
+    .mainh1 {
+        width: 100%;
+        font-size: 32px;
+        line-height: 37px;
+        margin-bottom: 12px;
+        text-align: center;
+    }
+
+    .text-1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .top_button {
+        font-size: 12px;
+        line-height: 26px;
+        padding: 0 8px;
+    }
+
+    .heading3 {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .what_we_do {
+        padding-top: 48x;
+    }
+
+    .catalog {
+        padding-top: 32px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .text_project {
+        width: 100%;
+    }
+
+    .item_text {
+        font-size: 16px;
+        line-height: 19px;
+        top: 16px;
+        right: 16px;
+    }
+
+    .item_text_2 {
+        left: 16px;
+    }
+
+    .project_parent {
+        flex-direction: column;
+        margin-top: 16px;
+    }
+
+    .project_item_margin {
+        margin-right: 0;
+        margin-bottom: 16px;
+    }
+
+    .footer_top {
+        padding: 0 auto;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer_text {
+        align-items: center;
+        text-align: center;
+        max-width: 667px;
+    }
+
+    .footer_heading {
+        text-align: center;
+    }
+
+    .footer_button {
+        margin-top: 40px;
+    }
+
+    .footer_bottom {
+        margin-top: 32px;
+    }
+
+    .footer_info {
+        margin-bottom: 37px;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+
 }
