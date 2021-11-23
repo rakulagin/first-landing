@@ -93,6 +93,7 @@ body {
     text-decoration: none;
     display: inline-block;
     margin-top: 71px;
+    /* margin-bottom: 190px; */
 }
 
 /* стили блока what we do */
@@ -192,12 +193,14 @@ body {
     margin-top: 112px;
     background-color: #316099;
     padding-top: 91px;
+    padding-bottom: 64px;
 }
 
 .footer_top {
-    margin-bottom: 96px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding-bottom: 96px;
 }
 
 .footer_text {
@@ -208,9 +211,6 @@ body {
 
 .footer_heading {
     width: 340px;
-    font-size: 36px;
-    line-height: 46px;
-    letter-spacing: 0.05em;
     color: #FFFFFF;
     text-align: left;
     margin-bottom: 32px;
@@ -229,28 +229,47 @@ body {
     text-decoration: none;
     background-color: #5A98D0;
     padding: 15px 80px;
-    display: inline-block;
-    align-self: center;
-
-}
-
-.footer_bottom {
-    margin-top: 64px;
-    padding-bottom: 64px;
 }
 
 .footer_info {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 64px;
+    margin-top: 64px;
     color: #FFFFFF;
     opacity: 1;
+    list-style-type: none;
 }
 
 .footer_list {
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0.05em;
+    display: flex;
     flex-grow: 1;
     flex-basis: 33.3333%;
     margin-right: 32px;
+}
+
+.footer_list:first-child::before {
+    content: 'A.';
+    display: block;
+    margin-right: 16px;
+}
+
+.footer_list:nth-child(2)::before {
+    content: 'T.';
+    display: block;
+    margin-right: 16px;
+}
+
+.footer_list:last-child::before {
+    content: 'E.';
+    display: block;
+    margin-right: 16px;
+}
+
+.copyright {
+    margin-top: 64px;
 }
 
 .copy_text {
@@ -261,14 +280,63 @@ body {
 
 /* стили второй страницы */
 
-.contacts {
+.contacts_header {
+
+    background: url(images/contact-us.png) center/cover no-repeat;
+    padding: 50px 0;
+}
+
+.cotnact_us {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.contacts_img {
+    width: 100%;
+}
+
+.contacts_heading {
     font-weight: 500;
     font-size: 44px;
     text-align: center;
+    line-height: 74px;  
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+    margin-top: 32px;
+    margin-bottom: 16px;
     }
+
+.contacts_text {
+
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.6);
+}
 
 .contacts_block {
     display: flex;
+    margin-top: 48px;
+    margin-bottom: 92px;
+    justify-content: center;
+}
+
+/* стили блока формы */
+
+.form {
+    background: #FFFFFF;
+    box-shadow: 5px 10px 50px rgba(16, 112, 177, 0.2);
+    border-radius: 10px;
+    padding: 56px;
+}
+
+.heading_form {
+    margin-bottom: 48px;
+}
+
+.text_form {
+    margin-bottom: 8px;
 }
 
 .inp {
@@ -276,6 +344,15 @@ border: 1px solid #356EAD;
 box-sizing: border-box;
 border-radius: 10px;
 opacity: 0.4;
+padding: 21px 42px;
+width: 100%;
+margin-bottom: 32px;
+}
+
+.input_textarea {
+    padding: 21px 42px 93px;
+    width: 100%;
+    margin-bottom: 72px;
 }
 
 .butt {
@@ -288,6 +365,12 @@ line-height: 26px;
 text-align: center;
 color: #FFFFFF;
 text-transform: uppercase;
+padding: 23px 183px;
+}
+
+.map {
+    max-width: 1140px;
+    margin: 0 auto;
 }
 
 /* медиа запросы */
@@ -297,6 +380,11 @@ text-transform: uppercase;
         padding-left: 32px;
         padding-right: 32px;
     }
+
+    .top_box {
+        height: 768px;
+    }
+
     .top_info {
         background-position: right 280px;
     }
@@ -315,9 +403,9 @@ text-transform: uppercase;
     }
 
     .footer_top {
-        justify-content: space-between;
-        width: 520px;
-        margin: 0 auto 64px;
+        width: 75%;
+        margin: 0 auto;
+        padding-bottom: 64px;
     }
 
     .footer_text {
@@ -325,13 +413,12 @@ text-transform: uppercase;
     }
 
     .footer_button {
-        padding: 3px 10px;
+        padding: 3px 16px;
     }
 
     .footer_bottom {
-        /* padding-left: 124px; */
-        width: 520px;
-        margin: 64px auto 0;
+        width: 75%;
+        margin: 0 auto;
     }
 
     .footer_info {
@@ -341,9 +428,18 @@ text-transform: uppercase;
     .footer_list {
         margin-bottom: 25px;
     }
+
+    .copyright {
+        margin-top: 40px;
+    }
+
+    .footer_contacts {
+        margin-top: 64px;
+    }
 }
 
 @media (max-width: 667px) {
+
     .header {
         padding-top: 24px;
     }
@@ -352,6 +448,10 @@ text-transform: uppercase;
         min-height: 376px;
         padding-bottom: 41px;
         box-sizing: border-box;
+    }
+
+    .top_box {
+        height: 100%;
     }
 
     .top_info {
@@ -423,21 +523,29 @@ text-transform: uppercase;
         margin-bottom: 16px;
     }
 
+    .footer {
+        margin-top: 64px;
+        padding-top: 18px;
+        padding-bottom: 32px;
+    }
+
     .footer_top {
-        padding: 0 auto;
+        width: 100%;
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+        padding-bottom: 41px;
+
     }
 
     .footer_text {
-        align-items: center;
+        width: 100%;
         text-align: center;
-        max-width: 667px;
+
     }
 
     .footer_heading {
+        width: 75%;
         text-align: center;
+        margin: 0 auto 32px;
     }
 
     .footer_button {
@@ -445,15 +553,29 @@ text-transform: uppercase;
     }
 
     .footer_bottom {
-        margin-top: 32px;
+        width: 100%;
     }
 
     .footer_info {
-        margin-bottom: 37px;
+        margin-top: 32px;
     }
+
+    .footer_list {
+        margin-bottom: 17px;
+    }
+
+    .footer_list:last-child {
+        margin-bottom: 0;
+    }
+    
 
     .copyright {
         text-align: center;
+        margin-top: 37px;
+    }
+
+    .footer_contacts {
+        margin-top: 32px;
     }
 
 }
